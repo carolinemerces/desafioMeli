@@ -1,0 +1,60 @@
+<div class="principal container-fluid">
+  <div class="row d-flex justify-content align-items-center">
+  
+    <div class="container p-3">
+      <div class="row mt-2">
+        <div
+          class="col-md-8 col-12 mx-auto d-flex justify-content-center border w-100 shadow"
+        >
+          <img
+            class="img-fluid"
+            src="{{ produto.imagemProduto }}"
+            alt="Imagem do produto"
+          />
+        </div>
+    
+        <div class="col-md-4 col-12 pl-md-2 px-0">
+          <div class="bg-white shadow w-100 p-5 border">
+            <h3>
+              Preço:
+              <br /><br />
+              <span class="text-success">
+                {{
+                  produto.precoProduto.toLocaleString("pt-br", {
+                    style: "currency",
+                    currency: "BRL"
+                  })
+                }}</span
+              >
+              à vista
+            </h3>
+            <br />
+            <p class="">{{ produto.nomeProduto }}</p>
+            <div>
+              <small class="text-muted">Quantidade em estoque: </small
+              >{{ produto.estoqueProduto }}
+            </div>
+            <small class="text-muted">Marca: {{ produto.marcaProduto }}</small>
+          </div>
+    
+          <div class="p-2 mt-3">
+            <button
+              (click)="adicionarCarrinho(produto)"
+              class="btn btn-lg  w-100 shadow p-2"
+              routerLink="/carrinho"
+              role="button"
+            >
+              Escanear
+            </button>
+          </div>
+          <div class="p-2">
+           
+          </div>
+        </div>
+      </div>
+    </div>
+
+              
+           
+  </div>
+</div>
